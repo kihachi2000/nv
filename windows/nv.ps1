@@ -11,8 +11,6 @@ $image = if ($env:NVIM_CONTAINER_IMAGE) {
 $dockerOptions = @(
     "run"
     "--rm"
-    "--entrypoint"
-    "bash"
     "-v"
     "$($PWD.Path):/workspace"
     "-w"
@@ -23,5 +21,5 @@ if (-not [Console]::IsInputRedirected -and -not [Console]::IsOutputRedirected) {
     $dockerOptions += "-it"
 }
 
-& docker @dockerOptions $image @args
+& wslc.exe @dockerOptions $image @args
 exit $LASTEXITCODE

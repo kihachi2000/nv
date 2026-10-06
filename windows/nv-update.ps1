@@ -25,5 +25,5 @@ $tag = if ($args.Count -gt 0) { $args[0] } else { "latest" }
 $image = "${baseImage}:${tag}"
 
 Write-Output "Pulling $image ..."
-& docker pull $image
+& wslc.exe pull $image
 exit $LASTEXITCODE
