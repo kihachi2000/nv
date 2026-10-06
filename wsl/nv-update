@@ -31,4 +31,4 @@ TAG="${1:-latest}"
 IMAGE="${BASE_IMAGE}:${TAG}"
 
 echo "Pulling ${IMAGE} ..."
-exec docker pull "${IMAGE}"
+exec wslc.exe pull "${IMAGE}"
